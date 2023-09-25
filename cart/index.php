@@ -42,37 +42,42 @@
     
     ?>
 
-<div class="container" id="product-container">
+    <div class="cart" id="cart"></div>
+
 
     <script>
 
-    jsProducts.forEach(function(product) {
-        for (var i = 0; i < sessionStorage.length; i++) {
-            var id = sessionStorage.key(i);
-            var amount = sessionStorage.getItem(id);
+        jsProducts.forEach(function(product) {
+            for (var i = 0; i < sessionStorage.length; i++) {
+                var id = sessionStorage.key(i);
+                var amount = sessionStorage.getItem(id);
 
-            if (product.id == id) {
-                console.log("Product: " + product.name + " | Amount: " + amount);
+                if (product.id == id) {
+                    console.log("Product: " + product.name + " | Amount: " + amount);
 
-                var card = document.createElement('div');
-                card.classList.add('product-card');
-                card.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <div class="product-title">${product.name}</div>
-                    <div class="product-price">$${product.price.toFixed(2)}</div>
-                    <div class="add-to-cart">
-                        <button class="amount" onclick="removeAmount(${product.id}, true);">-</button>
-                        <a class="amount" id="amount-${product.id}">${amount}</a>
-                        <button class="amount" onclick="addAmount(${product.id}, true);">+</button>
-                        <button class="remove-button" onclick="changeCart(${product.id}, 0);">Entfernen</button>
-                    </div>
-            `;
-                document.getElementById('product-container').appendChild(card);
-                }
-        }
-        });
+                    var card = document.createElement('div');
+                    card.classList.add('product-card');
+                    card.innerHTML = `
+                        <div class="item">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="item-info">
+                                <h3>${product.name}</h3>
+                                <p>${product.price.toFixed(2)}€</p>
+                            </div>
+                            <div class="item-actions">
+                                <button class="amount" onclick="removeAmount(${product.id}, true);">-</button>
+                                <a class="amount" id="amount-${product.id}">${amount}</a>
+                                <button class="amount" onclick="addAmount(${product.id}, true);">+</button><br>
+                                <button class="remove" onclick="changeCart(${product.id}, 0);">Entfernen</button>
+                            </div>
+                        </div>
+                `;
+                    document.getElementById('cart').appendChild(card);
+                    }
+            }
+            });
 
-
+                        
 
     </script>
 

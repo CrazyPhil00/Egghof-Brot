@@ -12,7 +12,13 @@ function addToCart(id) {
     console.log(id, amount);
 
     if (sessionStorage.getItem(id) == null) sessionStorage.setItem(id, amount);
-    else sessionStorage.setItem(id, amount + parseInt(sessionStorage.getItem(id)));
+    else{
+        if (amount + parseInt(sessionStorage.getItem(id)) >= 10) {
+            sessionStorage.setItem(id, 10);
+        }else {
+            sessionStorage.setItem(id, amount + parseInt(sessionStorage.getItem(id)));
+        }
+    }
 }
 
 function changeCart(id, amount) {

@@ -66,14 +66,14 @@ body {
 
 .add-to-cart button {
     
-    color: #fff;
+    color: black;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.cart-button {
+.remove-button {
     background-color: rgb(58,58,56);
 }
 

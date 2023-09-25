@@ -1,94 +1,60 @@
 body {
-
-    background-color: rgb(236,236,236);
-    font-family: Lato, sans-serif;
+    background-color: rgb(236, 236, 236);
+    font-family: Arial, sans-serif;
 }
 
-.menu-bar {
-    z-index: 99;
-    background-color: rgb(58, 58, 56);
-    color: white;
-    position: fixed;
-    top: 0;
+.cart {
+    width: 70%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
     left: 0;
-    right: 0;
-    text-align: center;
-    padding: 10px 0;
 }
 
-.logo {
-    z-index: 99;
-    width: auto;
-    height: 80px;
-}
-
-.container {
-    position: absolute;
-    top: 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.item {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
 }
 
-.product-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: calc(33.33% - 20px);
-    box-sizing: border-box;
+.item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
 }
 
-.product-card img {
-    max-width: 100%;
-    height: auto;
+.item-info {
+    flex-grow: 1;
 }
 
-.product-title {
-    font-size: 18px;
-    margin: 10px 0;
+.item-info h3 {
+    margin: 0;
 }
 
-.product-price {
-    font-size: 16px;
-    color: rgb(58,58,56);
+.item-info p {
+    margin: 0;
+    color: #666;
 }
 
-.add-to-cart {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+.item-actions {
+    display: flex;
+    align-items: center;
 }
 
-.add-to-cart button {
-    
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.cart-button {
-    background-color: rgb(58,58,56);
-}
-
-.add-to-cart button:hover {
-    text-decoration: underline;
-}
-
-.add-to-cart .amount {
-    position: relative;
-    width: 25px;
-    padding: 5px;
-    left: -10px;
-    cursor: pointer;
+.item-actions button {
     background-color: white;
     color: black;
-    font-size: 18px;
-    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.item-actions button.remove {
+    
+    margin-left: 5px;
 }

@@ -3,12 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            background-color: rgb(236, 236, 236);
+            font-family: Arial, sans-serif;
+        }
+
+        .cart {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .item img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+
+        .item-info {
+            flex-grow: 1;
+        }
+
+        .item-info h3 {
+            margin: 0;
+        }
+
+        .item-info p {
+            margin: 0;
+            color: #666;
+        }
+
+        .item-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-actions button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .item-actions button.remove {
+            background-color: #333;
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
-    
-
-    <button onclick=""></button>
-
+    <div class="cart">
+        <div class="item">
+            <img src="img/products/dinkelvollkornbrot.jpg" alt="Product 1">
+            <div class="item-info">
+                <h3>Product Name 1</h3>
+                <p>Price: $19.99</p>
+            </div>
+            <div class="item-actions">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+                <button class="remove">Remove</button>
+            </div>
+        </div>
+        <!-- Add more items as needed -->
+        
+    </div>
 </body>
 </html>

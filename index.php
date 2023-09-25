@@ -19,8 +19,9 @@ session_start();
 <body>
 
 <div class="menu-bar">
-        <img class="logo" src="img/logo.png" alt="">
-        <span class="material-symbols-outlined">shopping_basket</span>
+        <img  class="logo" src="img/logo.png" alt="">
+        <span href="./cart/index.php" class="material-symbols-outlined">shopping_basket</span>
+        <a href="/cart/">Wagen</a>
     </div>
 
 
