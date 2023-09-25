@@ -47,7 +47,7 @@
 
     </div>
 
-    <a href="">Weiter</a>
+    <a href="../checkout/index.php">Weiter</a>
 
     <script>
 
