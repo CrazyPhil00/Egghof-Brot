@@ -1,6 +1,5 @@
 body {
-
-    background-color: rgb(236,236,236);
+    background-color: rgb(236, 236, 236);
     font-family: Lato, sans-serif;
 }
 
@@ -55,7 +54,7 @@ body {
 
 .product-price {
     font-size: 16px;
-    color: rgb(58,58,56);
+    color: rgb(58, 58, 56);
 }
 
 .add-to-cart {
@@ -65,7 +64,6 @@ body {
 }
 
 .add-to-cart button {
-    
     color: black;
     border: none;
     padding: 10px 20px;
@@ -74,7 +72,7 @@ body {
 }
 
 .remove-button {
-    background-color: rgb(58,58,56);
+    background-color: rgb(58, 58, 56);
 }
 
 .add-to-cart button:hover {
@@ -93,13 +91,24 @@ body {
     font-weight: bold;
 }
 
+.more-text {
+    display: none;
+}
+
+.see-more-button {
+    background-color: #48484838
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    left: 55%;
+    top: 45%;
+}
 
 
-.material-symbols-outlined  {
-
-  position: absolute;
-  left: 55%;
-  top: 45%;
-
-  
+@media screen and (max-width: 768px) {
+    .product-card {
+        width: 100%;
+        margin-right: 0;
+    }
 }

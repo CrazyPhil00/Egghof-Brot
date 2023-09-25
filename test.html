@@ -1,87 +1,54 @@
+<?php 
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <style>
-        body {
-            background-color: rgb(236, 236, 236);
-            font-family: Arial, sans-serif;
-        }
-
-        .cart {
-            width: 80%;
-            margin: 20px auto;
-            background-color: white;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .item img {
-            max-width: 100px;
-            max-height: 100px;
-            margin-right: 10px;
-        }
-
-        .item-info {
-            flex-grow: 1;
-        }
-
-        .item-info h3 {
-            margin: 0;
-        }
-
-        .item-info p {
-            margin: 0;
-            color: #666;
-        }
-
-        .item-actions {
-            display: flex;
-            align-items: center;
-        }
-
-        .item-actions button {
-            background-color: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        .item-actions button.remove {
-            background-color: #333;
-            margin-left: 5px;
-        }
-    </style>
+    <title>Brot Bestellung</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="cart">
-        <div class="item">
-            <img src="img/products/dinkelvollkornbrot.jpg" alt="Product 1">
-            <div class="item-info">
-                <h3>Product Name 1</h3>
-                <p>Price: $19.99</p>
-            </div>
-            <div class="item-actions">
-                <button>-</button>
-                <span>1</span>
-                <button>+</button>
-                <button class="remove">Remove</button>
-            </div>
-        </div>
-        <!-- Add more items as needed -->
-        
-    </div>
+<div class="menu-bar">
+    <img  class="logo" src="img/logo.png" alt="">
+    <span href="./cart/index.php" class="material-symbols-outlined">shopping_basket</span>
+    <a href="/cart/">Wagen</a>
+</div>
+
+<div class="container">
+<?php
+    $jsonFile = 'data.json';
+    $products = json_decode(file_get_contents($jsonFile), true);
+
+    if ($products) {
+        foreach ($products as $product) {
+            echo '<div class="product-card">';
+            echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+            echo '<div class="product-title">' . $product['name'] . '</div>';
+            echo '<div class="product-price">$' . number_format($product['price'], 2) . '</div>';
+            echo '<div class="product-description">';
+            $shortenedDescription = substr($product['description'], 0, 40);
+            $remainingDescription = substr($product['description'], 40);
+            echo $shortenedDescription;
+            echo '<span class="more-text" id="more-text-' . $product['id'] . '">' . $remainingDescription . '</span>';
+            echo '</div>';
+            echo '<div class="add-to-cart">';
+            echo '<button class="amount" onclick="removeAmount(' . $product['id'] . ', false);">-</button>';
+            echo '<a class="amount" id="amount-' . $product['id'] . '">1</a>';
+            echo '<button class="amount" onclick="addAmount(' . $product['id'] . ', false);">+</button>';
+            echo '<button class="cart-button" onclick="addToCart(' . $product['id'] . ');">Hinzufügen</button>';
+            echo '<button class="see-more-button" id="more-button-' . $product['id'] . '" onclick="toggleDescription(' . $product['id'] . ');">See More</button>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo 'No products found.';
+    }
+?>
+</div>
 </body>
 </html>

@@ -63,3 +63,16 @@ function removeAmount(id, editCart) {
     }
 
 }
+
+function toggleDescription(productId) {
+    const moreText = document.getElementById(`more-text-${productId}`);
+    const seeMoreButton = document.getElementById(`more-button-${productId}`);
+
+    if (moreText.style.display === 'none' || moreText.style.display === '') {
+        moreText.style.display = 'inline'; // Show the remaining description
+        seeMoreButton.textContent = '[↵]';
+    } else {
+        moreText.style.display = 'none'; // Hide the remaining description
+        seeMoreButton.textContent = '[...]';
+    }
+}

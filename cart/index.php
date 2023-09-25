@@ -42,12 +42,26 @@
     
     ?>
 
-    <div class="cart" id="cart"></div>
+    <div class="cart" id="cart">
 
+
+    </div>
+
+    <a href="">Weiter</a>
 
     <script>
 
+        if (sessionStorage.length <= 0) {
+                        var card = document.createElement('div');
+                            card.classList.add('product-card');
+                            card.innerHTML = `
+                                Nichts im Warenkorb!
+                        `;
+                            document.getElementById('cart').appendChild(card);
+                    }
+
         jsProducts.forEach(function(product) {
+            
             for (var i = 0; i < sessionStorage.length; i++) {
                 var id = sessionStorage.key(i);
                 var amount = sessionStorage.getItem(id);
