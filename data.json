@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "Dinkelvollkorn Brot",
+      "price": 1.80,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+      "image": "img/products/dinkelvollkornbrot.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Gerstensonnen Brot",
+      "price": 2.00,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+      "image": "img/products/gerstensonnen-brot.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Regiopaarl",
+      "price": 2.00,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+      "image": "img/products/regiopaarl.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Dinkelvollkorn Brot",
+        "price": 1.80,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+        "image": "img/products/dinkelvollkornbrot.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Gerstensonnen Brot",
+        "price": 2.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+        "image": "img/products/gerstensonnen-brot.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Regiopaarl",
+        "price": 2.00,
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc porta sagittis sagittis.",
+        "image": "img/products/regiopaarl.jpg"
+      }
+  ]
+  
