@@ -17,7 +17,7 @@ from openpyxl.styles import Alignment
 
 def sendMail():
     email_sender = 'philippsiebenforcher@gmail.com'
-    email_password = 'rkwl hpbs wbld usdw'
+    email_password = ''
     email_receiver = ''
 
     subject = "Brotbestellung für den " + str(datetime.date.today())
