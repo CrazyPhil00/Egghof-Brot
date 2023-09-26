@@ -70,9 +70,9 @@ function toggleDescription(productId) {
 
     if (moreText.style.display === 'none' || moreText.style.display === '') {
         moreText.style.display = 'inline'; // Show the remaining description
-        seeMoreButton.textContent = '[↵]';
+        seeMoreButton.textContent = '[weniger Anzeigen]';
     } else {
         moreText.style.display = 'none'; // Hide the remaining description
-        seeMoreButton.textContent = '[...]';
+        seeMoreButton.textContent = '[mehr Anzeigen]';
     }
 }

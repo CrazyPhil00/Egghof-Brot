@@ -35,7 +35,7 @@ session_start();
             $remainingDescription = substr($product['description'], 40);
             echo $shortenedDescription;
             echo '<span class="more-text" id="more-text-' . $product['id'] . '">' . $remainingDescription . '</span>';
-            echo '<span class="see-more-button" id="more-button-' . $product['id'] . '" onclick="toggleDescription(' . $product['id'] . ');"> [...]</span>';
+            echo '<span class="see-more-button" id="more-button-' . $product['id'] . '" onclick="toggleDescription(' . $product['id'] . ');"> [mehr Anzeigen]</span>';
 
             echo '</div>';
             echo '<div class="add-to-cart">';

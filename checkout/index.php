@@ -165,7 +165,7 @@ input[type="text"] {
 <div class="container">
     <div class="checkout-form">
         <h2>Checkout</h2>
-        <form action="checkout/process.php" method="POST"> <!-- Create a PHP script for processing checkout data -->
+        <form action="process.php" method="POST"> <!-- Create a PHP script for processing checkout data -->
             <div class="form-group">
                 <label for="room-id">Appartment Nummer:</label>
                 <input type="text" id="room-id" name="room_id" required>

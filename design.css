@@ -96,7 +96,8 @@ body {
 }
 
 .see-more-button {
-    background-color: #48484838
+    background-color: #48484838;
+    font-size: 14px;
 }
 
 .material-symbols-outlined {
