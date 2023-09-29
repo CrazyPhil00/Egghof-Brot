@@ -43,6 +43,7 @@ session_start();
             echo '<a class="amount" id="amount-' . $product['id'] . '">1</a>';
             echo '<button class="amount" onclick="addAmount(' . $product['id'] . ', false);">+</button>';
             echo '<button class="cart-button" onclick="addToCart(' . $product['id'] . ');">HINZUFÜGEN</button>';
+            echo '<div id="cart-message-' . $product['id'] . '" class="cart-message"></div>';
             echo '</div>';
             echo '</div>';
         }

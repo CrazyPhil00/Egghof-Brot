@@ -87,7 +87,7 @@ body {
     cursor: pointer;
     background-color: white;
     color: black;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
 
@@ -99,6 +99,20 @@ body {
     background-color: #48484838;
     font-size: 14px;
 }
+
+.cart-message {
+    display: none;
+    position: relative;
+    background-color: rgb(58, 58, 56);
+    color: white;
+    top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
 
 .material-symbols-outlined {
     position: absolute;

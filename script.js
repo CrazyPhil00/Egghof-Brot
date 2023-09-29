@@ -1,29 +1,52 @@
+//defines 
+
+var max_products = 5;
+
+
 
 
 function addToCart(id) {
-
     var amount = parseInt(document.getElementById("amount-" + id).innerText);
 
-    if (amount <= 0 || amount > 10) {
+    if (amount <= 0 || amount > max_products) {
         console.log("Invalid Amount! \n" + new Error().stack);
+        displayCartMessage(id, "Ungülte menge", 700)
         return null;
     }
 
-    console.log(id, amount);
-
-    if (sessionStorage.getItem(id) == null) sessionStorage.setItem(id, amount);
-    else{
-        if (amount + parseInt(sessionStorage.getItem(id)) >= 10) {
-            sessionStorage.setItem(id, 10);
-        }else {
+    if (sessionStorage.getItem(id) == null) {
+        sessionStorage.setItem(id, amount);
+        displayCartMessage(id, "Zum Warenkorb hinzugefügt", 700)
+    } else {
+        if (amount + parseInt(sessionStorage.getItem(id)) >= max_products) {
+            sessionStorage.setItem(id, max_products);
+            displayCartMessage(id, `Es können maximal ${max_products} Brote hinzugefügt werden`, 1000)
+        } else {
             sessionStorage.setItem(id, amount + parseInt(sessionStorage.getItem(id)));
+            displayCartMessage(id, "Zum Warenkorb hinzugefügt", 700)
+
         }
     }
+
+    
+    
+}
+
+function displayCartMessage(id, text, time) {
+    var cartMessage = document.getElementById("cart-message-" + id);
+    cartMessage.innerText = text;
+    cartMessage.style.display = "block";
+    cartMessage.style.opacity = 1;
+   
+
+    setTimeout(function () {
+        cartMessage.style.opacity = 0;
+    }, time);
 }
 
 function changeCart(id, amount) {
 
-    if (amount < 0 || amount > 10) alert("Amount is invalid");
+    if (amount < 0 || amount > max_products) alert("Amount is invalid");
     else if (amount == 0) {
         sessionStorage.removeItem(id);
         location.reload();
@@ -37,7 +60,7 @@ function changeCart(id, amount) {
 function addAmount(id, editCart) {
     var amount = parseInt(document.getElementById("amount-" + id).innerText);
 
-    if (amount >= 10) console.log("Amount can't be larger than 10!\n" + new Error().stack);
+    if (amount >= max_products) console.log(`Amount can't be larger than ${max_products}!\n" ${new Error().stack}`);
     else {
         if (editCart) {
             document.getElementById("amount-" + id).innerText = amount + 1;

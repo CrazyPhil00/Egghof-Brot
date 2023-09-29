@@ -3,7 +3,28 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.menu-bar {
+    z-index: 99;
+    background-color: rgb(58, 58, 56);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo {
+    z-index: 99;
+    width: auto;
+    height: 80px;
+}
+
 .cart {
+    
+    position: relative;
+    top: 100px;
     width: 70%;
     margin: 20px auto;
     background-color: white;
